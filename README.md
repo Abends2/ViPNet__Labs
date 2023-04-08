@@ -1,10 +1,12 @@
 # ViPNet_Basics_and_Tasks
 
+| No.   | Mafgnhfnfnge  |  sgsgsggfsg |
+| ----- | ------------- | :----------:|
+| 1     | ViPNet        | dfgdfgfdg   |
+
+
+
 ## 1. ViPNet: Client
-
-
-
-
 ======================================================================
 ## 2. ViPNet: Administrator
 ### 2.1. Administrator: Центр управления сетью (ЦУС)
