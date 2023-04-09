@@ -5,12 +5,12 @@
 
 Содержание:
 
-0. [Предисловие](https://github.com/Abends2/ViPNet_Basics_and_Tasks/edit/main/README.md#0-предисловие)
-1. [ViPNet: Administrator](https://github.com/Abends2/ViPNet_Basics_and_Tasks/edit/main/README.md#1-vipnet-administrator)
-    * 1.1. [Administrator: Центр управления сетью (ЦУС)](https://github.com/Abends2/ViPNet_Basics_and_Tasks/edit/main/README.md#11-administrator-центр-управления-сетью-цус)
-    * 1.2. [Administrator: Удостоверяющий ключевой центр (УКЦ)](https://github.com/Abends2/ViPNet_Basics_and_Tasks/edit/main/README.md#12-administrator-удостоверяющий-ключевой-центр-укц)
-    * 1.3. [Administrator: ViPNet CSP](https://github.com/Abends2/ViPNet_Basics_and_Tasks/edit/main/README.md#13-administrator-vipnet-csp)
-2. [ViPNet: Client](https://github.com/Abends2/ViPNet_Basics_and_Tasks/edit/main/README.md#2-vipnet-client)
+0. [Предисловие](https://github.com/Abends2/ViPNet_Basics_and_Tasks#0-предисловие)
+1. [ViPNet: Administrator](https://github.com/Abends2/ViPNet_Basics_and_Tasks#1-vipnet-administrator)
+    * 1.1. [Administrator: Центр управления сетью (ЦУС)](https://github.com/Abends2/ViPNet_Basics_and_Tasks#11-administrator-центр-управления-сетью-цус)
+    * 1.2. [Administrator: Удостоверяющий ключевой центр (УКЦ)](https://github.com/Abends2/ViPNet_Basics_and_Tasks#12-administrator-удостоверяющий-ключевой-центр-укц)
+    * 1.3. [Administrator: ViPNet CSP](https://github.com/Abends2/ViPNet_Basics_and_Tasks#13-administrator-vipnet-csp)
+2. [ViPNet: Client](https://github.com/Abends2/ViPNet_Basics_and_Tasks#2-vipnet-client)
 
 
 Навигация по практическим примерам:
