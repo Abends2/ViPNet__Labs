@@ -1,6 +1,6 @@
 Схема сети: 
 
-![[1.png]]
+![ScreenShot](screenshots/1.png)
 
 Таблица маршрутизации:
 
@@ -28,7 +28,7 @@
 
 Имеющийся перечень ПО (также имеется доп. ПО + лицензии):
 
-![[2.png]]
+![ScreenShot](screenshots/2.png)
 
 Пароли от всех УЗ Windows 10 - xxXX2233
 HW-VA default creds - user:user
