@@ -8,41 +8,41 @@ Happy Hacking! :yum: :heartpulse:
 
 Для начала создадим для каждой виртуальной машины свои папки, как показано ниже:
 
-![[3.png]]
+![ScreenShot](screenshots/3.png)
 
 Далее необходимо создать и установить все виртуальные операционные системы в соответствии с таблицей ([[ViPNet-Labs/Lab-1/Reference]]):
 
-![[4.png]]
+![ScreenShot](screenshots/4.png)
 
 После этого необходимо настроить все сетевые интерфейсы на виртуальных машинах, а также выключить встроенный Firewall. Пример с ВМ **V-1-Adm**:
 
-![[5.png]]
+![ScreenShot](screenshots/5.png)
 
-![[6.png]]
+![ScreenShot](screenshots/6.png)
 
-![[7.png]]
+![ScreenShot](screenshots/7.png)
 
-![[8.png]]
+![ScreenShot](screenshots/8.png)
 
 Обязательно нужно проверить установились ли параметры сети:
 
-![[9.png]]
+![ScreenShot](screenshots/9.png)
 
 Таким же образом поступаем со всеми остальными машинами на базе Windows 10. После этого, необходимо проверить доступность хостов друг для друга в рамках своих подсетей, например:
 
-![[ViPNet-Labs/Lab-1/screenshots/10.png]]
+![ScreenShot](screenshots/10.png)
 
 > Машины с идентификатором HW-VA не активны на данный момент, так как в них нет ключей, поэтому ping на них проверять не стоит. Реализация связности подсетей будет реализована позже.
 
 Переходим на хост **V-1-DB** для того, чтобы установить SQL-сервер. Перед включением данной ВМ необходимо подключить к ней папку с компонентами ViPNet:
 
-![[ViPNet-Labs/Lab-1/screenshots/11.png]]
+![ScreenShot](screenshots/11.png)
 
  > Для того, чтобы работала общая папка, на виртуальную машину необходимо установить пакет VMWare Tools. Вдобавок к этому, необходимо включить сетевое обнаружение.
 
-![[ViPNet-Labs/Lab-1/screenshots/12.png]]
+![ScreenShot](screenshots/12.png)
 
-![[13.png]]
+![ScreenShot](screenshots/13.png)
 
 ***Рефлексия части 1***:
 - Созданы и установлены виртуальные машины в соответствии со схемой задания;
@@ -58,46 +58,46 @@ Happy Hacking! :yum: :heartpulse:
 
 1. Создаем папку **C:/SQLServer** и выбираем ее в качестве директории для установки компонентов:
 
-![[14.png]]
+![ScreenShot](screenshots/14.png)
 
 2. Выбираем "New SQL Server...":
 
-![[15.png]]
+![ScreenShot](screenshots/15.png)
 
 3. Принимаем лицензионное соглашение:
 
-![[16.png]]
+![ScreenShot](screenshots/16.png)
 
 4. Пропускаем пункты "Microsoft Update" и "Product Updates"
 5. Выбираем устанавливаемые компоненты:
 
-![[17.png]]
+![ScreenShot](screenshots/17.png)
 
 6. Конфигурирование состояния сервера:
 
-![[18.png]]
+![ScreenShot](screenshots/18.png)
 
 7. Конфигурация сервера:
 
-![[19.png]]
+![ScreenShot](screenshots/19.png)
 
 8. Конфигурация ядра БД (**пароль - 1234**):
 
-![[20.png]]
+![ScreenShot](screenshots/20.png)
 
-![[21.png]]
+![ScreenShot](screenshots/21.png)
 
 Далее происходит процесс установки. При успешном завершении инсталляции ошибок возникнуть не должно:
 
-![[22.png]]
+![ScreenShot](screenshots/22.png)
 
 После успешной установки необходимо активировать **протокол TCP/IP** на SQL-сервере:
 
-![[23.png]]
+![ScreenShot](screenshots/23.png)
 
 Перезапускаем SQL-сервер, чтобы изменения вступили в силу:
 
-![[24.png]]
+![ScreenShot](screenshots/24.png)
 
 >  Точно такую же операцию необходимо повторить на хосте **V-3-Open**!
 
@@ -112,64 +112,64 @@ Happy Hacking! :yum: :heartpulse:
 
 #### 3.1. Установка серверной части ЦУС
 
-![[25.png]]
+![ScreenShot](screenshots/25.png)
 
 Подключаемся к базе данных, которую мы создали на прошлом этапе, но не путайте подсети - для каждой из них своя БД! Далее представлена установка ЦУС на ВМ V-1-Adm:
 
-![[26.png]]
+![ScreenShot](screenshots/26.png)
 
 Обязательно стоит проверять подключение к БД, иначе далее продолжить настройку ViPNet будет невозможно.
 
 > Логин: sa; Пароль: 1234
 
-![[27.png]]
+![ScreenShot](screenshots/27.png)
 
 Тот же самый процесс проделываем для ВМ V-3-Adm, только не забываем поменять IP-адрес SQL-сервера.
 #### 3.2. Установка клиентской части ЦУС
 
-![[ViPNet-Labs/Lab-1/screenshots/28.png]]
+![ScreenShot](screenshots/28.png)
 
-![[ViPNet-Labs/Lab-1/screenshots/29.png]]
+![ScreenShot](screenshots/29.png)
 
 Дожидаемся процесса установки и приступаем к УКЦ
 
-![[30.png]]
+![ScreenShot](screenshots/30.png)
 
 > Тот же самый процесс проделываем для ВМ V-3-Adm
 
 ---
 ### Часть 4. Установка УКЦ на Adm
 
-![[31.png]]
+![ScreenShot](screenshots/31.png)
 
-![[32.png]]
+![ScreenShot](screenshots/32.png)
 
 Точно также, как и с ЦУС, устанавливаем УКЦ, как для **V-1-Adm**, так и для **V-3-Adm**
 
-![[33.png]]
+![ScreenShot](screenshots/33.png)
 
 ---
 ### Часть 5. Установка лицензии на ЦУС
 
 Запускаем ЦУС на **V-1-Adm**. При первоначальной авторизации вводим **Administrator:Administrator**:
 
-![[34.png]]
+![ScreenShot](screenshots/34.png)
 
 Далее нам сразу предлагают сменить пароль:
 
-![[ViPNet-Labs/Lab-1/screenshots/35.png]]
+![ScreenShot](screenshots/35.png)
 
 После этого необходимо установить лицензию:
 
-![[ViPNet-Labs/Lab-1/screenshots/36.png]]
+![ScreenShot](screenshots/36.png)
 
-![[ViPNet-Labs/Lab-1/screenshots/37.png]]
+![ScreenShot](screenshots/37.png)
 
 > Номер сети по первой лицензии - 14443
 
 После принятия лицензии нам предлагается выбрать вариант начала работы. Это окно можно просто закрыть
 
-![[38.png]]
+![ScreenShot](screenshots/38.png)
 
 Все операции необходимо повторить для V-3-Adm
 
@@ -185,37 +185,37 @@ Happy Hacking! :yum: :heartpulse:
 
 В ЦУС на **V-1-Adm** создаем два координатора - **Coordinator 1** и **Coordinator HW-VA**:
 
-![[39.png]]
+![ScreenShot](screenshots/39.png)
 
-![[40.png]]
+![ScreenShot](screenshots/40.png)
 
 Далее создаем клиентов - **Admin 1**, **Client 2**, **OperCA**:
 
-![[41.png]]
+![ScreenShot](screenshots/41.png)
 
-![[42.png]]
+![ScreenShot](screenshots/42.png)
 
 > Обратите внимание на то, каким пользователям, какие координаторы присвоены
 
 По итогу имеем 5 пользователей (они создаются автоматически по мере создания клиентов и координаторов):
 
-![[43.png]]
+![ScreenShot](screenshots/43.png)
 
 Далее создаем связи (все-ко-всем):
 
-![[44.png]]
+![ScreenShot](screenshots/44.png)
 
-![[45.png]]
+![ScreenShot](screenshots/45.png)
 
-![[46.png]]
+![ScreenShot](screenshots/46.png)
 
 **Данный алгоритм нужно проделать для всех пользователей**. Выбор связей для каждого последующего пользователя будет сокращаться, поэтому у последнего из них вариантов не будет, т.к. все связи будут уже созданы.
 
 Далее создаем межсерверный канал. Переходим на **Coordinator 1**:
 
-![[47.png]]
+![ScreenShot](screenshots/47.png)
 
-![[48.png]]
+![ScreenShot](screenshots/48.png)
 
 > Межсерверный канал создается только для подсетей, где расположены V-1-Coord и V-2-HW-VA, сеть V-3 это не касается!
 
@@ -229,69 +229,69 @@ Happy Hacking! :yum: :heartpulse:
 
 Теперь в ЦУС выделяем все координаторы и создаем справочники (тоже самое делаем для "клиентов"):
 
-![[49.png]]
+![ScreenShot](screenshots/49.png)
 
-![[50.png]]
+![ScreenShot](screenshots/50.png)
 
-![[51.png]]
+![ScreenShot](screenshots/51.png)
 
 ЦУС указывает на то, что ожидаются ключи, поэтому запускаем УКЦ (**V-1-Adm**):
 
-![[52.png]]
+![ScreenShot](screenshots/52.png)
 
-![[53.png]]
+![ScreenShot](screenshots/53.png)
 
 Производим первичную инициализацию:
 
-![[54.png]]
+![ScreenShot](screenshots/54.png)
 
-![[55.png]]
+![ScreenShot](screenshots/55.png)
 
 > Имя и пароль не меняем
 
-![[56.png]]
+![ScreenShot](screenshots/56.png)
 
 Далее следуют "**Сведения о владельце сертификата**", которые можно пропустить
 
-![[57.png]]
+![ScreenShot](screenshots/57.png)
 
 Параметры ключа ЭЦП не изменяем
 
-![[58.png]]
+![ScreenShot](screenshots/58.png)
 
-![[59.png]]
+![ScreenShot](screenshots/59.png)
 
 Разделы "**Сведения о точках распространения**" и "**Программные средства**" пропускаем, не меняя параметров
 
-![[60.png]]
+![ScreenShot](screenshots/60.png)
 
-![[61.png]]
+![ScreenShot](screenshots/61.png)
 
-![[62.png]]
+![ScreenShot](screenshots/62.png)
 
 Завершение первичной инициализации УКЦ:
 
-![[63.png]]
+![ScreenShot](screenshots/63.png)
 
-![[64.png]]
+![ScreenShot](screenshots/64.png)
 
 Далее создадим дистрибутив ключей:
 
-![[65.png]]
+![ScreenShot](screenshots/65.png)
 
 Переходим в раздел "**Сетевые узлы**" и запускаем выдачу дистрибутива ключей:
 
-![[66.png]]
+![ScreenShot](screenshots/66.png)
 
-![[67.png]]
+![ScreenShot](screenshots/67.png)
 
 Шифрование не меняем
 
-![[68.png]]
+![ScreenShot](screenshots/68.png)
 
 Раздел "**Назначение сертификата**" пропускаем. Создаем пароль для пользователя **Admin 1** (т.к. он самый первый на выдаче):
 
-![[69.png]]
+![ScreenShot](screenshots/69.png)
 
 "**Сведения о владельце сертификата**" пропускаем. Данные шаги необходимо проделать и для остальных пользователей. В случае, если вы выделили всех пользователей сразу, то процесс настройки не будет прерываться - вы сразу настраиваете всех пользователей.
 
@@ -299,7 +299,7 @@ Happy Hacking! :yum: :heartpulse:
 
 Когда ключи будут сформированы, откроется директория с папками, где находятся ключи:
 
-![[70.png]]
+![ScreenShot](screenshots/70.png)
 
 Для удобства перемещаем ключи в общую папку, которую мы подключали к ВМ. Далее эти ключи будут применены на соответствующих ВМ.
 
@@ -314,41 +314,41 @@ Happy Hacking! :yum: :heartpulse:
 
 На машину **V-1-Cord** необходимо установить ПО координатора (Архив Coordinator for Windows):
 
-![[71.png]]
+![ScreenShot](screenshots/71.png)
 
 После установки заходим в саму программу:
 
-![[72.png]]
+![ScreenShot](screenshots/72.png)
 
 При первом запуске должен появиться запрос ключа. Устанавливаем его:
 
-![[73.png]]
+![ScreenShot](screenshots/73.png)
 
 > Именно для этого мы переносили в общую папку ключи, чтобы удобно их вытащить при необходимости
 
-![[74.png]]
+![ScreenShot](screenshots/74.png)
 
 Проходим авторизацию при запуске ПО ViPNet Coordinator:
 
-![[75.png]]
+![ScreenShot](screenshots/75.png)
 
 После аутентификации приложение открывается в фоновом режиме, открываем его. Возможно, нужно немного подождать, пока у нас не спросят разрешения на работу с сетью:
 
-![[76.png]]
+![ScreenShot](screenshots/76.png)
 
 Далее нам необходимо установить ПО **ViPNet Client** на **V-1-OperCA**, **V-1-Adm** и **V-2-Cli**. Сама установка не требует специфических операций - нужно просто запустить установщик. После этого запускаем установленное ПО на виртуальных машинах и применяем созданные ранее ключи. Итог:
 
 V-1-Adm:
 
-![[77.png]]
+![ScreenShot](screenshots/77.png)
 
 V-1-Coord:
 
-![[78.png]]
+![ScreenShot](screenshots/78.png)
 
 V-2-Cli:
 
-![[79.png]]
+![ScreenShot](screenshots/79.png)
 
 > Можно заметить, что, например, V-2-Cli не видит другие узлы сети. Это объясняется на данный момент тем, что наши два координатора Coordinator 1 и Coordinator 2 HW-VA не соединены между собой. С другой стороны, все хосты, которые относятся непосредственно к Coordinator 1 видят друг друга, как и должно быть
 
@@ -360,97 +360,97 @@ V-2-Cli:
 
 Для начала необходимо координатору "**Coordiantor 2 HW-VA**" выдать роль "**Coordiantor HW-VA**" и удалить остальные роли. Данные операции проделываются через ЦУС на V-1-Adm:
 
-![[80.png]]
+![ScreenShot](screenshots/80.png)
 
-![[81.png]]
+![ScreenShot](screenshots/81.png)
 
 Далее вновь для координаторов и клиентов создаем справочники (ЦУС):
 
-![[82.png]]
+![ScreenShot](screenshots/82.png)
 
-![[83.png]]
+![ScreenShot](screenshots/83.png)
 
 Теперь в УКЦ выдаем новый дистрибутив ключей и передаем их в ЦУС (процесс выдачи нового дистрибутива ключей представлен выше):
 
-![[84.png]]
+![ScreenShot](screenshots/84.png)
 
-![[85.png]]
+![ScreenShot](screenshots/85.png)
 
 Далее уже через ЦУС отправляем справочники и ключи:
 
-![[86.png]]
+![ScreenShot](screenshots/86.png)
 
-![[87.png]]
+![ScreenShot](screenshots/87.png)
 
 После этого занимаемся установкой ключа на **Coordiantor 2 HW-VA**. Для этого нам необходима утилита, которая способна создавать iso-образы. Я использую **ImgBurn**. При помощи данной утилиты необходимо конечную папку с ключом от **Coordiantor 2 HW-VA** переделать в iso-образ, который впоследствии мы будем монтировать к виртуальной машине:
 
-![[88.png]]
+![ScreenShot](screenshots/88.png)
 
-![[89.png]]
+![ScreenShot](screenshots/89.png)
 
 Подключаем диск к ВМ **V-2-HW-VA**:
 
-![[90.png]]
+![ScreenShot](screenshots/90.png)
 
 Запускаем второй координатор и приступаем к его настройке:
 
-![[91.png]]
+![ScreenShot](screenshots/91.png)
 
 > Первоначально, логин и пароль - user, после установки ключа данные для входа изменяется на - user:xxXX2233
 
-![[92.png]]
+![ScreenShot](screenshots/92.png)
 
-![[93.png]]
+![ScreenShot](screenshots/93.png)
 
-![[94.png]]
+![ScreenShot](screenshots/94.png)
 
 Далее следует проверка пароля - xxXX2233 - после чего настраиваем сетевые интерфейсы:
 
-![[95.png]]
+![ScreenShot](screenshots/95.png)
 
-![[96.png]]
+![ScreenShot](screenshots/96.png)
 
-![[97.png]]
+![ScreenShot](screenshots/97.png)
 
-![[98.png]]
+![ScreenShot](screenshots/98.png)
 
-![[99.png]]
+![ScreenShot](screenshots/99.png)
 
 Службы DNS и NTP в данный момент не настраиваем. Диапазон виртуальных IP-адресов оставляем по умолчанию. После этого нам предлагают проверить связь между координаторами:
 
-![[100.png]]
+![ScreenShot](screenshots/100.png)
 
 Выбираем "Yes" и далее выбираем значение параметра "firewall mode". Необходимо выбрать "**No External Firewall**":
 
-![[101.png]]
+![ScreenShot](screenshots/101.png)
 
-![[102.png]]
+![ScreenShot](screenshots/102.png)
 
 Далее необходимо выбрать сетевой интерфейс, который будет установлен в качестве внешнего, т.е. смотреть в сторону другого координатора:
 
-![[103.png]]
+![ScreenShot](screenshots/103.png)
 
 Вот и найденный соседний координатор (V-1-Coord):
 
-![[104.png]]
+![ScreenShot](screenshots/104.png)
 
-![[105.png]]
+![ScreenShot](screenshots/105.png)
 
-![[106.png]]
+![ScreenShot](screenshots/106.png)
 
-![[107.png]]
+![ScreenShot](screenshots/107.png)
 
-![[108.png]]
+![ScreenShot](screenshots/108.png)
 
 В итоге мы должны получить сообщение "**VPN probing has succeeded**". Заканчиваем конфигурирование координатора:
 
-![[109.png]]
+![ScreenShot](screenshots/109.png)
 
-![[110.png]]
+![ScreenShot](screenshots/110.png)
 
 Если перейти на машину V-1-Coord и посмотреть компоненты сети, то можем обнаружить, что у нас все хосты определились:
 
-![[111.png]]
+![ScreenShot](screenshots/111.png)
 
 Перед тем, как соединять две сети между собой, посмотрим, что мы имеем на данный момент:
 1. Установленный SQL-сервер на V-3-Open;
@@ -471,181 +471,181 @@ V-2-Cli:
 
 Переходим в ЦУС на **V-1-Adm** в раздел "Доверенные сети" и выбираем "Установить взаимодействие...":
 
-![[112.png]]
+![ScreenShot](screenshots/112.png)
 
 **V-1-Adm** у нас будет выступать в роли инициатора межсетевого взаимодействия:
 
-![[113.png]]
+![ScreenShot](screenshots/113.png)
 
 Указываем информацию противоположной сети. В качестве координатора, через который будет проходить туннель, указываем **Coorduinator 1**:
 
-![[114.png]]
+![ScreenShot](screenshots/114.png)
 
 Далее необходимо добавить **все** сетевые узлы и **всех** пользователей сети 14443:
 
-![[115.png]]
+![ScreenShot](screenshots/115.png)
 
-![[116.png]]
+![ScreenShot](screenshots/116.png)
 
-![[117.png]]
+![ScreenShot](screenshots/117.png)
 
-![[118.png]]
+![ScreenShot](screenshots/118.png)
 
 Создание и сохранение межсетевой информации:
 
-![[119.png]]
+![ScreenShot](screenshots/119.png)
 
-![[120.png]]
+![ScreenShot](screenshots/120.png)
 
-![[121.png]]
+![ScreenShot](screenshots/121.png)
 
 После завершения операции переходим в УКЦ (**V-1-Adm**) и для начала создаем и экспортируем мастер-ключ, который необходим для установления межсетевого взаимодействия:
 
-![[122.png]]
+![ScreenShot](screenshots/122.png)
 
-![[123.png]]
+![ScreenShot](screenshots/123.png)
 
-![[124.png]]
+![ScreenShot](screenshots/124.png)
 
-![[125.png]]
+![ScreenShot](screenshots/125.png)
 
 > Пароль: xxXX2233
 
 Вот мы получили файл с межсетевой информацией и мастер-ключ:
 
-![[126.png]]
+![ScreenShot](screenshots/126.png)
 
 > Перенесите эти два компонента в общую папку - дальше эти файлы нужны будут на V-3-Adm
 
 Переключаемся на **V-3-Adm** и переходим в ЦУС, чтобы загрузить межсетевую информацию от V-1-Adm:
 
-![[127.png]]
+![ScreenShot](screenshots/127.png)
 
-![[128.png]]
+![ScreenShot](screenshots/128.png)
 
 Здесь необходимо выбрать шлюзовый координатор противоположной сети с номером 14443. В нашем случае, это **Coordinator 3 HW-VA**:
 
-![[129.png]]
+![ScreenShot](screenshots/129.png)
 
-![[130.png]]
+![ScreenShot](screenshots/130.png)
 
-![[131.png]]
+![ScreenShot](screenshots/131.png)
 
 Межсетевая информация загружена, далее загружаем мастер-ключ через УКЦ на V-3-Adm:
 
-![[132.png]]
+![ScreenShot](screenshots/132.png)
 
-![[133.png]]
+![ScreenShot](screenshots/133.png)
 
-![[134.png]]
+![ScreenShot](screenshots/134.png)
 
-![[135.png]]
+![ScreenShot](screenshots/135.png)
 
 Ключ загружен. Теперь надо решить вопрос с некоторыми предупреждениями, которые возникли после импорта данных. Сначала в разделе "Администрирование" обрабатываем сертификат:
 
-![[136.png]]
+![ScreenShot](screenshots/136.png)
 
-![[137.png]]
+![ScreenShot](screenshots/137.png)
 
-![[138.png]]
+![ScreenShot](screenshots/138.png)
 
 Теперь в разделе "Ключевой центр" создаем и передаем ключи в ЦУС:
 
-![[139.png]]
+![ScreenShot](screenshots/139.png)
 
-![[140.png]]
+![ScreenShot](screenshots/140.png)
 
 Как видим, нам этого не удалось сделать по причине ошибки межсетевого мастер-ключа, поэтому исправляем проблему:
 
-![[141.png]]
+![ScreenShot](screenshots/141.png)
 
-![[142.png]]
+![ScreenShot](screenshots/142.png)
 
-![[143.png]]
+![ScreenShot](screenshots/143.png)
 
 После исправления проблем, снова создаем и передаем ключи в ЦУС:
 
-![[144.png]]
+![ScreenShot](screenshots/144.png)
 
 Далее создаем новые связи с пользователями (между пользователя из сети 14443 и 14445) через ЦУС на **V-3-Adm**:
 
-![[145.png]]
+![ScreenShot](screenshots/145.png)
 
 Не видим пользователей из доверенной сети, поэтому добавляем объекты (клиентов из доверенной сети):
 
-![[146.png]]
+![ScreenShot](screenshots/146.png)
 
 Связи с **Admin 3**:
 
-![[147.png]]
+![ScreenShot](screenshots/147.png)
 
 Связи с **Coordinator 3 HW-VA**:
 
-![[148.png]]
+![ScreenShot](screenshots/148.png)
 
 Раз мы добавили связи в сети 14445, необходимо уведомить об этом сеть 14443, поэтому мы также создаем межсетевую информацию, но теперь уже через ЦУС **V-3-Adm**
 
-![[149.png]]
+![ScreenShot](screenshots/149.png)
 
-![[150.png]]
+![ScreenShot](screenshots/150.png)
 
 Сохраняем межсетевую информацию в файл, чтобы затем перенести ее на V-1-Adm:
 
-![[151.png]]
+![ScreenShot](screenshots/151.png)
 
 После сохранения создается файл **14445-14443.lzh**. Его переносим в общую папку. Далее переходим на V-1-Adm и загружаем межсетевую информацию:
 
-![[152.png]]
+![ScreenShot](screenshots/152.png)
 
-![[153.png]]
+![ScreenShot](screenshots/153.png)
 
-![[154.png]]
+![ScreenShot](screenshots/154.png)
 
-![[155.png]]
+![ScreenShot](screenshots/155.png)
 
 Теперь в ЦУС (**V-1-Adm**) вновь создаем сетевую информацию:
 
-![[156.png]]
+![ScreenShot](screenshots/156.png)
 
-![[157.png]]
+![ScreenShot](screenshots/157.png)
 
 Теперь связи между пользователями разных сетей подтверждены:
 
-![[158.png]]
+![ScreenShot](screenshots/158.png)
 
 Далее создадим справочники и ключи ЦУС (**V-1-Adm**):
 
-![[159.png]]
+![ScreenShot](screenshots/159.png)
 
-![[160.png]]
+![ScreenShot](screenshots/160.png)
 
 Если возникают ошибки, исправляем их, как было ранее
 
-![[161.png]]
+![ScreenShot](screenshots/161.png)
 
-![[162.png]]
+![ScreenShot](screenshots/162.png)
 
-![[163.png]]
+![ScreenShot](screenshots/163.png)
 
 После решения всех проблем создаем справочники, а также отправляем справочники и ключи:
 
-![[164.png]]
+![ScreenShot](screenshots/164.png)
 
 > Тут нужно быть внимательным: справочники и ключи надо создать и отправить на V-1-Adm и на V-3-Adm!
 
 Теперь можно перейти в **ViPNet Client** на V-1-Adm и увидеть, что в нашей защищенной сети появились хосты из другой (отмечены как **VPN №14445**)
 
-![[165.png]]
+![ScreenShot](screenshots/165.png)
 
 Тут может произойти такое, что в какую-то из сетей не дошла информация от другой. Это в какой-то степени нормально. Нормально в том случае, если другая сеть видит все клиенты первой (обратите внимание на скрины выше и ниже):
 
-![[166.png]]
+![ScreenShot](screenshots/166.png)
 
 Обмен информацией между сетями прошел успешно. В случае, если информация по какой-то причине не дошла, то, во-первых, следует снова зайти в ЦУС -> Доверенные сети -> Отправить межсетевую информацию, на другой стороне (на втором админе -> Обработать межсетевую информацию). Также стоит проверить, нужно ли где-то снова создать справочники и ключи (затем через УКЦ передать их в ЦУС и через ЦУС отправить на хосты)
 
 После завершения всех процедур имеем две соединенные сети:
 
-![[167.png]]
+![ScreenShot](screenshots/167.png)
 
 ---
 ### Часть 11.  Создание туннелированного соединения между V-1-DB и V-3-Open
@@ -656,40 +656,40 @@ V-2-Cli:
 
 Сначала на V-1-Adm через ЦУС в свойствах координатора **Coordinator 1** в разделе "Туннелирование" увеличиваем максимальное число одновременно туннелируемых соединений до 2, а также добавляем новое туннелированное соединение:
 
-![[168.png]]
+![ScreenShot](screenshots/168.png)
 
 Указываем IP-адрес противоположного хоста (V-3-Open):
 
-![[169.png]]
+![ScreenShot](screenshots/169.png)
 
 Далее создаем справочники:
 
-![[170.png]]
+![ScreenShot](screenshots/170.png)
 
 Далее на V-3-Adm также создаем туннелируемое соединение, не забывая увеличить число туннелируемых соединений:
 
-![[171.png]]
+![ScreenShot](screenshots/171.png)
 
 Далее на обоих администраторах обмениваемся и принимаем межсетевую информацию:
 
 **V-1-Adm**:
 
-![[172.png]]
+![ScreenShot](screenshots/172.png)
 
-![[173.png]]
+![ScreenShot](screenshots/173.png)
 
 **V-3-Adm**:
 
-![[174.png]]
+![ScreenShot](screenshots/174.png)
 
-![[175.png]]
+![ScreenShot](screenshots/175.png)
 
-![[176.png]]
+![ScreenShot](screenshots/176.png)
 
-![[177.png]]
+![ScreenShot](screenshots/177.png)
 
 Cнова создаем и отправляем справочники и ключи на V-1-Adm и V-3-Adm. На этом все. При правильной конфигурации туннеля ping между V-1-DB и V-3-Open должен появиться:
 
-![[178.png]]
+![ScreenShot](screenshots/178.png)
 
 ---
