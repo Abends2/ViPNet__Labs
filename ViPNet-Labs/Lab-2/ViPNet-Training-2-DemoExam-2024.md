@@ -5,6 +5,11 @@
 Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 
 ---
+### Оглавление
+
+[Подготовка](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#подготовка)
+
+---
 ### Подготовка
 
 #### Часть 1. Добавление виртуальных машин в библиотеку VMware Workstation
