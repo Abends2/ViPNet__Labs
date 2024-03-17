@@ -955,7 +955,7 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 
 ![ScreenShot](screenshots/194.png)
 
-#### Часть 2. Установка ViPNet Publication Service
+#### Часть 5. Установка ViPNet Publication Service
 
 Установка также крайне проста:
 
@@ -969,7 +969,7 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 
 ![ScreenShot](screenshots/198.png)
 
-#### Часть 3. Установка ViPNet Registration Point
+#### Часть 6. Установка ViPNet Registration Point
 
 Распаковываем и устанавливаем:
 
@@ -985,7 +985,7 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 
 ![ScreenShot](screenshots/203.png)
 
-#### Часть 4. Активация ViPNet Registration Point
+#### Часть 7. Активация ViPNet Registration Point
 
 Вот тут как раз-таки и появляется важный момент, на который стоит обратить особое внимание - **процесс активации ViPNet Registration Point и ViPNet Client на V-1-OperCA происходит при помощи одного ключа**.
 
