@@ -14,8 +14,9 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
     - [Часть 4. Настройка IP-адресов](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-4-настройка-ip-адресов)
     - [Часть 5. Отключение брандмауэра](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-5-отключение-брандмауэра)
     - [Часть 6. Настройка спящего режима](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-6-настройка-дисплея-и-спящего-режима)
+    - [Часть 7. Активация режима частной сети](https://github.com/Abends2/ViPNet__Labs/edit/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-7-активация-режима-частной-сети)
 2. [Задание 1. Развертывание ПК Administrator в качестве центра сертификации](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#задание-1-развертывание-пк-administrator-в-качестве-центра-сертификации)
-    - [Часть 1. Установка БД на V-1-DB](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-1-установка-бд-на-v-1-db)
+    - [Часть 1. Установка БД на V-1-Adm](https://github.com/Abends2/ViPNet__Labs/edit/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-1-установка-бд-на-v-1-adm)
     - [Часть 2. Установка серверного приложения ЦУС и УКЦ на V-1-Adm, настройка службы NccService](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-2-установка-серверного-приложения-цус-и-укц-на-v-1-adm-настройка-службы-nccservice)
     - [Часть 3. Установка клиентского приложения ЦУС на V-1-Adm](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#часть-3-установка-клиентского-приложения-цус-на-v-1-adm)
 3. [Задание 2. Инициализация VPN Coordinator и установка ПО VPN Client](https://github.com/Abends2/ViPNet__Labs/blob/main/ViPNet-Labs/Lab-2/ViPNet-Training-2-DemoExam-2024.md#задание-2-инициализация-vpn-coordinator-и-установка-по-vpn-client)
@@ -123,6 +124,12 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 
 >Win+R => control panel
 
+#### Часть 7. Активация режима частной сети
+
+Переходим в "**Параметры**" => "**Сеть и Интернет**" => "**Состояние**" => **(Выбираем наш сетевой адаптер)** => "**Свойства**" => "**Сетевой профиль**" => "**Частные**"
+
+![ScreenShot](screenshots/fix-13.png)
+
 ---
 ### Задание 1. Развертывание ПК Administrator в качестве центра сертификации
 
@@ -133,7 +140,7 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 
 >ВНИМАНИЕ: ЦУС клиент будет установлен на V-1-Adm
 
-#### Часть 1. Установка БД на V-1-DB
+#### Часть 1. Установка БД на V-1-Adm
 
 Для установки БД необходимо создать отдельную директорию:
 
@@ -812,6 +819,12 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 ![ScreenShot](screenshots/138.png)
 
 ##### 3.3. Инициализация координаторов
+
+Сразу акцентирую внимание:
+
+> Примечание: На координаторе в разделе "...continent or ocean..." необходимо выставлять параметр "UTC", вместо "Europe/Russia", в случае, если не работает основной метод, представленный ниже, я бы даже советовал использовать именно "UTC". Другой проверенный вариант - выставлять время вручную (это можно сделать после выставления часового пояса и региона)
+
+![ScreenShot](screenshots/fix-14.png)
 
 Пришло время разобраться с самыми ключевыми узлами защищенных сетей ViPNet - Координаторами. Инициализация будет реализована через "**command line interface**":
 
@@ -1493,6 +1506,8 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 ![ScreenShot](screenshots/288.png)
 
 ##### 5.2. Регистрация пользователя
+
+>Примечание: запрос от Registration Point до УКЦ может доходить крайне долго, у некоторых это может занимать вплоть до 20 минут. Никто не мешает после 5-10 минут сделать перезагрузку V-1-Adm и V-1-OperCA и повторить запрос. Если до этого вы делали все также, как я, то запрос рано или поздно должен прийти.
 
 Нажимаем на кнопку регистрации пользователя:
 
