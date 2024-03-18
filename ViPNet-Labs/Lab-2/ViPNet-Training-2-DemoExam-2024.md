@@ -130,6 +130,10 @@ Made with :heartpulse: by "**o1d_bu7_go1d**" for KPK Students
 
 ![ScreenShot](screenshots/fix-13.png)
 
+Также этот параметр вы можете настроить во всплывающем окне в процессе развертывания стенда (после установки ViPNet Client). Уведомление должно появиться само:
+
+![ScreenShot](screenshots/fix-15.png)
+
 ---
 ### Задание 1. Развертывание ПК Administrator в качестве центра сертификации
 
